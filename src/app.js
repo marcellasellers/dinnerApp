@@ -1,16 +1,21 @@
 var express = require('express');
 var path = require('path')
 const hbs = require('hbs')
-
+var findFood = require('./utils/restaurants')
 var app = express();
+const port = process.env.PORT  || 3000
 
-hbs.registerPartials(path.join(__dirname, '/views/partials'))
+
+
+//findFood(0,0,0)
+
+hbs.registerPartials(path.join(__dirname, '../views/partials'))
 
 // Set view engine to hbs
 app.set('view engine', 'hbs')
 
 // Set up static directory to serve
-app.use(express.static(path.join(__dirname, '/public')))
+app.use(express.static(path.join(__dirname, '../public')))
 
 app.get('', (req, res) => {
     res.render('index', {
@@ -26,6 +31,7 @@ app.get('*', (req, res) => {
   })
 })
 
-app.listen(3000, () => {
-  console.log('Server started!')
+
+app.listen(port, () => {
+  console.log('Server started at ' + port)
 })
