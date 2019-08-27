@@ -1,12 +1,10 @@
 import React from "react";
 
-const brandHeader = "Choice";
-
-const NavBar = (props) => {
+const NavBar = () => {
     return (
         <div>
             <nav className={'navbar navbar-expand-md navbar-light bg-light'}>
-                <a className={'navbar-brand'}>{brandHeader}</a>
+                <a className={'navbar-brand'}>Choice</a>
                 <div className={'collapse navbar-collapse'} id={'navbarNavDropdown'}>
                     <ul className={'nav navbar-nav'}>
                         <li className={'nav-item active'}>

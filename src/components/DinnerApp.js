@@ -71,13 +71,12 @@ export default class DinnerApp extends React.Component {
                     <Header user={currentUser}/>
                 </div>
                 <div className={'container'}>
-
-                <RestaurantList
-                    options={this.state.options}
-                    addOption={this.handleAddOption}
-                    removeOptions={this.handleDeleteOptions}
-                    removeSingleOption={this.handleDeleteSingleOption}
-                />
+                    <RestaurantList
+                        options={this.state.options}
+                        addOption={this.handleAddOption}
+                        removeOptions={this.handleDeleteOptions}
+                        removeSingleOption={this.handleDeleteSingleOption}
+                    />
                     <div className={'progress container'}>
                         <div
                             className={'progress-bar progress-bar-striped progress-bar-animated bg-warning'}
@@ -90,14 +89,13 @@ export default class DinnerApp extends React.Component {
                             {this.state.pBarValue/10} / 10
                         </div>
                     </div>
-
                     <Search
                         options={this.state.options}
                         addOption={this.handleAddOption}
                         reset={this.handleDeleteOptions}
                     />
                     <br/>
-            </div>
+                </div>
             </div>
         );
     };

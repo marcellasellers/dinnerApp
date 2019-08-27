@@ -1,9 +1,8 @@
 import React from 'react'
-import FoundRestaurant from "./SearchResult";
+import SearchResult from "./SearchResult";
 import ButtonBar from "./ButtonBar";
 
 const token = '2Z1jifmBWdPq3jJcc2kHgoUkl31Mi9fJfSr7h0qnlVxc2HBNdz5zAnQCPW-Y-90N7ODqDZjGwrWGEzvVe2KdLk-icR7UBhT2YBnCKRHDHascSYxx3oAfj1jmIEYuXXYx';
-
 
 export default class Search extends React.Component {
 
@@ -76,7 +75,7 @@ export default class Search extends React.Component {
                 <br/>
                 <div className={'text-center search'}>
                     {this.state.results && this.state.results.map((restaurant, index) =>
-                        <FoundRestaurant
+                        <SearchResult
                             name={restaurant.name}
                             city={restaurant.city}
                             state={restaurant.state}

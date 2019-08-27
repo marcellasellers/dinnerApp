@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class FoundRestaurant extends React.Component {
+export default class SearchResult extends React.Component {
     render() {
         const props = this.props;
         return (

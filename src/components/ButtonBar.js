@@ -24,7 +24,6 @@ export default class ButtonBar extends React.Component {
                     onClick={this.props.reset}>
                     reset
                 </button>
-
                 <button disabled={!this.props.options.length > 0}
                         onClick={this.makeChoice}
                         className={'btn btn-dark button-bar'}

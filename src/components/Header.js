@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Header = (props) => {
-    const currentUser = props.user;
     return (
         <div>
             <h1>Welcome!</h1>
