@@ -8,7 +8,7 @@ const NavBar = () => {
                 <div className={'collapse navbar-collapse'} id={'navbarNavDropdown'}>
                     <ul className={'nav navbar-nav'}>
                         <li className={'nav-item active'}>
-                            <a className={'nav-link'} href={'#'}>Home</a>
+
                         </li>
                     </ul>
                 </div>
