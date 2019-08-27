@@ -1,10 +1,13 @@
 {{>header}}
-    <div>
-        <h1>{{name}}</h1>
-        <form>
-            <input placeholder="Enter restaurant">
-            <button>Start!</button>
-            <p id="res"></p>
+        <h1>Hi {{username}}, from {{location}}!</h1>
+        <form action="" method="GET" target="_self">
+            <label for="email">E-mail:</label>
+            <input id="email" type="email" placeholder="Enter e-mail" required>
+            <br>
+            <label for="password">Password:</label>
+            <input id="password" type="password" required>
+            <br>
+            <button>Submit</button>
         </form>
     </div>
 {{>footer}}

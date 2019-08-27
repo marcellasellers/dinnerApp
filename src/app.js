@@ -1,37 +1,29 @@
-var express = require('express');
-var path = require('path')
-const hbs = require('hbs')
-var findFood = require('./utils/restaurants')
-var app = express();
-const port = process.env.PORT  || 3000
+import React from 'react'
+import ReactDOM from 'react-dom'
+import DinnerApp from './components/DinnerApp.js'
+import Search from './components/Search.js'
+import css from '../public/stylesheets/landing.css';
 
+class User {
+    constructor (name = 'Anon', location) {
+        this.name = name;
+        this.location = location;
+        this.favRestaurants = [];
+    };
 
+    addRestaurant (restaurant) {
+        this.favRestaurants.push(restaurant);
+    };
 
-//findFood(0,0,0)
+    updateName (newName) {
+        this.name = newName;
+    };
 
-hbs.registerPartials(path.join(__dirname, '../views/partials'))
+    updateLocation (newLocation) {
+        this.location = newLocation;
+    };
+};
+const me = new User('Marcie', 'Zd');
 
-// Set view engine to hbs
-app.set('view engine', 'hbs')
-
-// Set up static directory to serve
-app.use(express.static(path.join(__dirname, '../public')))
-
-app.get('', (req, res) => {
-    res.render('index', {
-      title: 'NodePage',
-      name: 'Marcie'
-    })
-})
-
-// Catch all/error
-app.get('*', (req, res) => {
-  res.render('404', {
-    message: 'ERROR!'
-  })
-})
-
-
-app.listen(port, () => {
-  console.log('Server started at ' + port)
-})
+const appRoot = document.getElementById('app');
+ReactDOM.render(<DinnerApp user={me}/>, appRoot);
