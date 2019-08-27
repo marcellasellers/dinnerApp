@@ -4,7 +4,7 @@
   "private": false,
   "scripts": {
     "serve": "live-server public/",
-    "dev-server": "webpack-dev-server",
+    "dev-server": "webpack-dev-server"
   },
   "dependencies": {
     "all": "0.0.0",
