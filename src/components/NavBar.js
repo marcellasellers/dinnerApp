@@ -4,7 +4,7 @@ const NavBar = () => {
     return (
         <div>
             <nav className={'navbar navbar-expand-md navbar-light bg-light'}>
-                <a className={'navbar-brand'}>Choice</a>
+                <a className={'navbar-brand'}>Choice App</a>
                 <div className={'collapse navbar-collapse'} id={'navbarNavDropdown'}>
                     <ul className={'nav navbar-nav'}>
                         <li className={'nav-item active'}>

@@ -16,7 +16,6 @@ export default class DinnerApp extends React.Component {
     };
 
     handleAddOption = (option) => {
-
         if(!option) {
             return 'Enter a restaurant to add..';
         } else if(this.state.options.includes(option)) {
