@@ -9,4 +9,12 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve( path.join(__dirname, 'public'), 'index.html'));
 });
 
+app.get('https://api.yelp.com/v3/businesses/search', (req, res) => {
+    const term = req.params.term;
+    const city = req.params.city;
+    const state = req.params.state;
+
+
+    res.sendFile(path.resolve( path.join(__dirname, 'public'), 'index.html'));
+});
 app.listen(port);

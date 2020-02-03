@@ -3,6 +3,7 @@ import SearchResult from "./SearchResult";
 import ButtonBar from "./ButtonBar";
 
 const token = '2Z1jifmBWdPq3jJcc2kHgoUkl31Mi9fJfSr7h0qnlVxc2HBNdz5zAnQCPW-Y-90N7ODqDZjGwrWGEzvVe2KdLk-icR7UBhT2YBnCKRHDHascSYxx3oAfj1jmIEYuXXYx';
+const proxyurl = "https://cors-anywhere.herokuapp.com/";
 
 export default class Search extends React.Component {
 
@@ -21,11 +22,18 @@ export default class Search extends React.Component {
     find = (e, add) => {
         e.preventDefault();
         const term = e.target.elements.name.value;
-        const location = e.target.elements.city.value;
+        const city = e.target.elements.city.value;
         const state = e.target.elements.state.value;
         const results = [];
+        let location = null;
 
-        fetch('https://api.yelp.com/v3/businesses/search?location=' + location +'&term=' + term,
+        if(state){
+            location = city + ", " + state;
+        } else {
+            location = city;
+        }
+
+        fetch(proxyurl + 'https://api.yelp.com/v3/businesses/search?location=' + location +'&term=' + term,
             {headers: {Authorization: 'Bearer ' + token}}
         ).then(res => res.json()
         ).then( res => {
@@ -76,6 +84,7 @@ export default class Search extends React.Component {
                 <div className={'text-center search'}>
                     {this.state.results && this.state.results.map((restaurant, index) =>
                         <SearchResult
+                            key={restaurant.phone}
                             name={restaurant.name}
                             city={restaurant.city}
                             state={restaurant.state}
